@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://ccsm28ipwlws6"]
+
+[ext_resource type="Script" uid="uid://fulvflisuvtw" path="res://scripts/upgrade_screen.gd" id="1_mh8j6"]
+
+[node name="UpgradeScreen" type="Control" unique_id=836836204]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mh8j6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1690073585]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.84)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1505563527]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 240.0
+offset_right = 1300.0
+offset_bottom = 320.0
+text = "Choose an Upgrade"
+horizontal_alignment = 1
+
+[node name="Button1" type="Button" parent="." unique_id=1858445553]
+process_mode = 3
+layout_mode = 0
+offset_left = 620.0
+offset_top = 370.0
+offset_right = 1300.0
+offset_bottom = 450.0
+
+[node name="Button2" type="Button" parent="." unique_id=78584125]
+process_mode = 3
+layout_mode = 0
+offset_left = 620.0
+offset_top = 470.0
+offset_right = 1300.0
+offset_bottom = 550.0
+
+[node name="Button3" type="Button" parent="." unique_id=1731726754]
+process_mode = 3
+layout_mode = 0
+offset_left = 620.0
+offset_top = 570.0
+offset_right = 1300.0
+offset_bottom = 650.0

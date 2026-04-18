@@ -1,0 +1,100 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.04, 0.06, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 180.0
+offset_right = 1360.0
+offset_bottom = 880.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "White Day\n(20 Minutes Till Dawn style prototype)"
+horizontal_alignment = 1
+
+[node name="CharacterRow" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CharacterLabel" type="Label" parent="Panel/VBoxContainer/CharacterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Character"
+
+[node name="CharacterSelect" type="OptionButton" parent="Panel/VBoxContainer/CharacterRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WeaponRow" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="WeaponLabel" type="Label" parent="Panel/VBoxContainer/WeaponRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Weapon"
+
+[node name="WeaponSelect" type="OptionButton" parent="Panel/VBoxContainer/WeaponRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DifficultyRow" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="DifficultyLabel" type="Label" parent="Panel/VBoxContainer/DifficultyRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Difficulty"
+
+[node name="DifficultySelect" type="OptionButton" parent="Panel/VBoxContainer/DifficultyRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = ""
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Start Run"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="item_selected" from="Panel/VBoxContainer/CharacterRow/CharacterSelect" to="." method="_on_selection_changed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/WeaponRow/WeaponSelect" to="." method="_on_selection_changed"]
+[connection signal="item_selected" from="Panel/VBoxContainer/DifficultyRow/DifficultySelect" to="." method="_on_selection_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
